@@ -1,0 +1,109 @@
+/* @import url() FONT IMPORTS MUST ALWAYS BE AT THE VERY TOP OF THIS FILE, ABOVE THE TAILWIND IMPORTS — DO NOT DELETE THIS COMMENT */
+@import url('https://fonts.googleapis.com/css2?family=Fredoka:wght@500;600;700&family=Nunito:wght@400;600;700;800;900&family=Livvic:wght@400;500;600;700;900&display=swap');
+
+/* CRITICAL: THE FOLLOWING TAILWIND IMPORTS MUST NEVER BE DELETED OR REORDERED — DO NOT DELETE THIS COMMENT */
+@import 'tailwindcss/base';
+@import 'tailwindcss/components';
+@import 'tailwindcss/utilities';
+
+/* END TAILWIND IMPORTS — ALL OTHER CSS MUST GO BELOW THIS LINE */
+
+/* Design 1 — Brownie: warm cream, chocolate, pastel pills, chunky "sticker" buttons */
+:root,
+[data-theme='brownie'] {
+  --font-sans: 'Nunito', system-ui, sans-serif;
+  --font-display: 'Fredoka', 'Nunito', system-ui, sans-serif;
+  --backdrop: 241 226 200;
+  --cream: 250 241 225;
+  --paper: 255 255 255;
+  --ink: 74 44 29;
+  --muted: 134 102 82;
+  --line: 238 221 195;
+  --line-strong: 220 198 166;
+  --cocoa: 91 52 35;
+  --cocoa-soft: 243 228 211;
+  --cocoa-deep: 58 31 20;
+  --butter: 255 217 94;
+  --butter-soft: 255 240 191;
+  --butter-deep: 226 182 58;
+  --mint: 196 230 170;
+  --mint-soft: 230 244 218;
+  --blush: 249 201 213;
+  --blush-soft: 253 230 236;
+  --leaf: 63 143 53;
+  --leaf-deep: 44 102 37;
+  --danger: 163 64 42;
+}
+/* Design 2 — HBN: airy white & lavender, signature purple, light geometric type, soft depth */
+[data-theme='hbn'] {
+  --font-sans: 'Livvic', system-ui, sans-serif;
+  --font-display: 'Livvic', system-ui, sans-serif;
+  --backdrop: 238 232 247;
+  --cream: 248 245 253;
+  --paper: 255 255 255;
+  --ink: 42 31 69;
+  --muted: 108 99 130;
+  --line: 236 230 246;
+  --line-strong: 211 199 234;
+  --cocoa: 123 63 214;
+  --cocoa-soft: 239 230 251;
+  --cocoa-deep: 90 38 168;
+  --butter: 228 214 248;
+  --butter-soft: 243 236 252;
+  --butter-deep: 205 184 240;
+  --mint: 215 236 245;
+  --mint-soft: 234 246 250;
+  --blush: 246 221 240;
+  --blush-soft: 251 238 248;
+  --leaf: 123 63 214;
+  --leaf-deep: 90 38 168;
+  --danger: 180 35 90;
+}
+/* HBN swaps the chunky offset shadows for soft, floating depth */
+[data-theme='hbn'] .lift,
+[data-theme='hbn'] .lift:active {
+  box-shadow: 0 8px 20px -10px rgb(var(--cocoa) / 0.55) !important;
+  transform: none;
+}
+[data-theme='hbn'] .lift:disabled {
+  box-shadow: none !important;
+}
+[data-theme='hbn'] .card-lift {
+  box-shadow: 0 6px 24px -14px rgb(var(--ink) / 0.25) !important;
+  border-color: rgb(var(--line) / 0.6) !important;
+}
+[data-theme='hbn'] .fab {
+  border-width: 0 !important;
+  background-color: rgb(var(--cocoa)) !important;
+  color: rgb(var(--paper)) !important;
+}
+[data-theme='hbn'] .soft-pill {
+  box-shadow: none !important;
+  color: rgb(var(--cocoa-deep)) !important;
+}
+html,
+body,
+#root {
+  height: 100%;
+}
+body {
+  font-family: var(--font-sans);
+  background: rgb(var(--backdrop));
+  color: rgb(var(--ink));
+  -webkit-tap-highlight-color: transparent;
+  -webkit-font-smoothing: antialiased;
+}
+.no-scrollbar::-webkit-scrollbar {
+  display: none;
+}
+.no-scrollbar {
+  scrollbar-width: none;
+}
+@media (prefers-reduced-motion: reduce) {
+  *,
+  *::before,
+  *::after {
+    transition-duration: 0.01ms !important;
+    animation-duration: 0.01ms !important;
+  }
+}
